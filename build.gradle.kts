@@ -113,6 +113,14 @@ tasks {
         finalizedBy(named("copyResources"))
     }
 
+    verifyPlugin {
+        dependsOn(named("copyResources"))
+    }
+
+    buildPlugin {
+        dependsOn(named("copyResources"))
+    }
+
     patchPluginXml {
         version.set(pluginVersion)
         sinceBuild.set(pluginSinceBuild)
