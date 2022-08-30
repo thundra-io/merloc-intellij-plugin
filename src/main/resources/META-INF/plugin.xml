@@ -1,0 +1,37 @@
+<!-- Copyright 2022 Thundra Inc. All Rights Reserved. -->
+
+<idea-plugin>
+  <id>io.thundra.merloc</id>
+  <name>MerLoc - AWS Lambda Debugger &amp; Live Development Tool</name>
+  <description>
+    MerLoc is a live AWS Lambda function development and debugging tool.
+    MerLoc allows you to run AWS Lambda functions on your local while they are still part of a flow in the AWS cloud remote.
+  </description>
+  <version>0.0.1</version>
+  <vendor email="support@thundra.io" url="https://thundra.io">Thundra</vendor>
+
+  <!--
+     |  All plugins should declare a dependency on com.intellij.modules.platform to indicate dependence on shared functionality.
+     |  Messaging, UI Themes, UI Components, Files, Documents, Actions, Components, Services, Extensions, Editors
+     |-->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Java language PSI Model, Inspections, Intentions, Completion, Refactoring, Test Framework -->
+  <depends>com.intellij.modules.java</depends>
+
+  <!-- File Type, Lexer, Parser, Highlighting, References, Code Completion, Find, Rename, Formatter, Code Navigation -->
+  <depends>com.intellij.modules.lang</depends>
+
+  <!-- Debug Session, Stack Frames, Break Points, Source Positions, Memory Views, Tracked Instances -->
+  <depends>com.intellij.modules.xdebugger</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <configurationType implementation="io.thundra.merloc.intellij.MerLocRunConfigurationType"/>
+    <notificationGroup displayType="BALLOON" id="merlocNotifications" isLogByDefault="true"/>
+    <notificationGroup displayType="STICKY_BALLOON" id="merlocStickyNotifications" isLogByDefault="true"/>
+  </extensions>
+
+  <actions>
+  </actions>
+
+</idea-plugin>
