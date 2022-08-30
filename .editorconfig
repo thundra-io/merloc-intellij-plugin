@@ -1,0 +1,9 @@
+# Config file for ktlint.
+# See: https://github.com/pinterest/ktlint#editorconfig
+
+[*.{kt,kts}]
+# Comma-separated list of rules to disable (Since 0.34.0)
+# Note that rules in any ruleset other than the standard ruleset will need to be prefixed by the ruleset identifier.
+# 
+# no-multi-spaces: disabled to allow vertical alignment of case branches in when expressions
+disabled_rules=no-multi-spaces
