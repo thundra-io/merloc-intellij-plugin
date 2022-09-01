@@ -17,6 +17,7 @@
 
 ## [0.0.2] - 2022-09-01
 ### Added
+- Initial release
 
 ### Changed
 
