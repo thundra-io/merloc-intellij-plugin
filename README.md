@@ -44,58 +44,73 @@ So this means that you can also test and verify IAM permission issues on your lo
 ## Setup
 
 1) [Setup](https://github.com/thundra-io/merloc) MerLoc **Broker** to your AWS account
+
 2) [Setup](https://github.com/thundra-io/merloc-java#41-gatekeeper-setup) MerLoc **GateKeeper** to your AWS Lambda function
+
 3) Click `Add Configuration` and add a new `MerLoc` configuration.
-   ![Add New MerLoc Run Configuration](assets/add-new-run-configuration.png)
+
+![Add New MerLoc Run Configuration](assets/add-new-run-configuration.png)
+
 4) Fill the `Broker URL` field with the URL you get from MerLoc **Broker** [setup](https://github.com/thundra-io/merloc#broker-setup) before.
    And select the project/module where your AWS Lambda function is located for the `Use module classpath` field.
    Then save the run configuration.
-   ![Configure MerLoc Run Configuration](assets/configure-run-configuration.png)
+
+![Configure MerLoc Run Configuration](assets/configure-run-configuration.png)
 
 ## How to Use
 
 ### Run
 
 - Click `Run` to start MerLoc **AWS Lambda Runtime**.
-  ![Run Runtime](assets/run-runtime.png)
+
+![Run Runtime](assets/run-runtime.png)
 
 - So you will see MerLoc banner in the console.
-  ![Run Banner](assets/run-banner.png)
+
+![Run Banner](assets/run-banner.png)
 
 - Later on, trigger the AWS Lambda function. Then, the real request will be forwarded to 
   MerLoc **AWS Lambda Runtime** on your local through MerLoc **GateKeeper**. 
   So it will be executed locally and response will be returned
   to MerLoc **GateKeeper** and so to AWS Lambda function caller from there.
-  ![Run Result](assets/run-result.png)
+
+![Run Result](assets/run-result.png)
 
 ### Debug
 
 - Click `Debug` to start MerLoc **AWS Lambda Runtime** in debug mode.
-  ![Debug Runtime](assets/debug-runtime.png)
+
+![Debug Runtime](assets/debug-runtime.png)
 
 - So you will see MerLoc banner in the console.
-  ![Debug Banner](assets/debug-banner.png)
+
+![Debug Banner](assets/debug-banner.png)
 
 - Put breakpoint from your IDE.
-  ![Debug Put Breakpoint](assets/debug-put-breakpoint.png)
+
+![Debug Put Breakpoint](assets/debug-put-breakpoint.png)
 
 - Then, trigger the AWS Lambda function. So the forwarded request will stop at the breakpoint you put on your local
   and you can debug AWS Lambda function locally.
-  ![Debug Pause on Breakpoint](assets/debug-pause-on-breakpoint.png)
+
+![Debug Pause on Breakpoint](assets/debug-pause-on-breakpoint.png)
 
 ### Hot-Reload
 
 - While running MerLoc **AWS Lambda Runtime** on your local, apply your changes in the source code(s).
   Then go to `Build` in the menu bar and click `Build Module` to re-build module in which you updated source code(s).
-  ![Hot-Reload Build Module](assets/hot-reload-build-module.png)
+
+![Hot-Reload Build Module](assets/hot-reload-build-module.png)
 
 - After that you will see MerLoc log messages in your console which says that
   related function environment(s) (affected by changes) have been reloaded.
-  ![Hot-Reload Reload Message](assets/hot-reload-reload-message.png)
+
+![Hot-Reload Reload Message](assets/hot-reload-reload-message.png)
 
 - Then, trigger your AWS Lambda function again, and you will see that
   your changes are live in the running function on your local.
-  ![Hot-Reload Changes Applied](assets/hot-reload-changes-applied.png)
+
+![Hot-Reload Changes Applied](assets/hot-reload-changes-applied.png)
 
 For more information, please visit MerLoc
 - [Broker](https://github.com/thundra-io/merloc) 
