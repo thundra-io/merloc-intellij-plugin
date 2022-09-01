@@ -14,3 +14,17 @@
 ### Fixed
 
 ### Security
+
+## [0.0.2] - 2022-09-01
+### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
