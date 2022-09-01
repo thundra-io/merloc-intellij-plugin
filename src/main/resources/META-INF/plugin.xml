@@ -4,8 +4,9 @@
   <id>io.thundra.merloc</id>
   <name>Merloc - AWS Lambda Debugger &amp; Hot Reloading Dev Tool</name>
   <description>
-    MerLoc is a live AWS Lambda function development and debugging tool.
-    MerLoc allows you to run AWS Lambda functions on your local while they are still part of a flow in the AWS cloud remote.
+    MerLoc is a live AWS Lambda function development, debugging and hot-reloading tool.
+    MerLoc allows you to run AWS Lambda functions on your local while they are still part of a flow in the AWS cloud remote
+    and increases your productivity by applying your local changes to the function without redeploy.
   </description>
   <version>0.0.1</version>
   <vendor email="support@thundra.io" url="https://thundra.io">Thundra</vendor>

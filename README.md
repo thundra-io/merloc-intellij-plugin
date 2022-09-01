@@ -9,7 +9,8 @@ MerLoc is a live AWS Lambda function development and debugging tool.
 
 <!-- Plugin description -->
 
-MerLoc allows you to run AWS Lambda functions on your local while they are still part of a flow in the AWS cloud remote.
+MerLoc allows you to run AWS Lambda functions on your local while they are still part of a flow in the AWS cloud remote
+and increases your productivity by applying your local changes to the function without redeploy.
 
 With the help of MerLoc, you don’t need to
 - deploy to test your function
