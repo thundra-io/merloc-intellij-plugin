@@ -12,13 +12,11 @@
 ### Removed
 
 ### Fixed
-- Upgrade to MerLoc Java runtime `0.0.8` to handle error during initialization of phone-home service if network interface couldn't be detected for localhost
 
 ### Security
 
-## [0.0.2] - 2022-09-01
+## [0.0.3] - 2022-09-24
 ### Added
-- Initial release
 
 ### Changed
 
@@ -27,6 +25,10 @@
 ### Removed
 
 ### Fixed
+- Upgrade to MerLoc Java runtime `0.0.8` to handle error during initialization of phone-home service if network interface couldn't be detected for localhost
 
 ### Security
 
+## [0.0.2] - 2022-09-01
+### Added
+- Initial release
