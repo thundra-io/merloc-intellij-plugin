@@ -40,7 +40,7 @@ repositories {
 
 dependencies {
     implementation("org.apache.commons:commons-lang3:3.12.0")
-    compileOnly("io.thundra.merloc:merloc-aws-lambda-runtime-embedded:0.0.7")
+    compileOnly("io.thundra.merloc:merloc-aws-lambda-runtime-embedded:0.0.8")
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
 }
 
