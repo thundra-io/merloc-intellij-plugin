@@ -41,17 +41,21 @@ So this means that you can also test and verify IAM permission issues on your lo
   manually using
   <kbd>Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
 
-## Setup
+## Pre-Setup
+
+Before IntelliJ IDEA setup, you need to setup MerLoc **Broker** and  **GateKeeper** components:
 
 1) [Setup](https://github.com/thundra-io/merloc) MerLoc **Broker** to your AWS account
 
 2) [Setup](https://github.com/thundra-io/merloc-java#41-gatekeeper-setup) MerLoc **GateKeeper** to your AWS Lambda function
 
-3) Click `Add Configuration` and add a new `MerLoc` configuration.
+## Setup
+
+1) Click `Add Configuration` and add a new `MerLoc` configuration.
 
 ![Add New MerLoc Run Configuration](assets/add-new-run-configuration.png)
 
-4) Fill the `Broker URL` field with the URL you get from MerLoc **Broker** [setup](https://github.com/thundra-io/merloc#broker-setup) before.
+2) Fill the `Broker URL` field with the URL you get from MerLoc **Broker** [setup](https://github.com/thundra-io/merloc#broker-setup) before.
    And select the project/module where your AWS Lambda function is located for the `Use module classpath` field.
    Then save the run configuration.
 
