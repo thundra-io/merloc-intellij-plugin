@@ -12,6 +12,7 @@
 ### Removed
 
 ### Fixed
+- Upgrade to MerLoc Java runtime `0.0.9` to fix reflection based object and class field access issue on JDK 17 by accessing with Unsafe instead
 
 ### Security
 
