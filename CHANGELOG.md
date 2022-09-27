@@ -12,11 +12,10 @@
 ### Removed
 
 ### Fixed
-- Upgrade to MerLoc Java runtime `0.0.10` to fix update of missing `AWS_SECRET_ACCESS_KEY` environment variable at each invocation
 
 ### Security
 
-## [0.0.4] - 2022-09-26
+## [0.0.5] - 2022-09-27
 ### Added
 
 ### Changed
@@ -26,9 +25,13 @@
 ### Removed
 
 ### Fixed
-- Upgrade to MerLoc Java runtime `0.0.9` to fix reflection based object and class field access issue on JDK 17 by accessing with Unsafe instead
+- Upgrade to MerLoc Java runtime `0.0.10` to fix update of missing `AWS_SECRET_ACCESS_KEY` environment variable at each invocation
 
 ### Security
+
+## [0.0.4] - 2022-09-26
+### Fixed
+- Upgrade to MerLoc Java runtime `0.0.9` to fix reflection based object and class field access issue on JDK 17 by accessing with Unsafe instead
 
 ## [0.0.3] - 2022-09-24
 ### Fixed
