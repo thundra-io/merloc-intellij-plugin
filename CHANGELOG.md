@@ -12,6 +12,7 @@
 ### Removed
 
 ### Fixed
+- Upgrade to MerLoc Java runtime `0.0.10` to fix update of missing `AWS_SECRET_ACCESS_KEY` environment variable at each invocation
 
 ### Security
 
