@@ -88,6 +88,7 @@ public final class ConfigManager {
 
                 configProps.put("brokerURL", config.get("brokerURL"));
                 configProps.put("connectionName", config.get("connectionName"));
+                configProps.put("apiKey", config.get("apiKey"));
                 configProps.put("runtimeVersion", config.get("runtimeVersion"));
 
                 if (null != oldProfileName) {

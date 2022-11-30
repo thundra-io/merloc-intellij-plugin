@@ -8,6 +8,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import io.thundra.merloc.intellij.runtime.RuntimeConfig;
 import io.thundra.merloc.intellij.runtime.RuntimeManager;
+import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -21,6 +22,8 @@ public class MerLocRunProfileState extends ApplicationConfiguration.JavaApplicat
             "io.thundra.merloc.aws.lambda.runtime.embedded.LambdaRuntime";
     private static final String BROKER_URL_CONFIG_ENV_VAR_NAME =
             "MERLOC_BROKER_URL";
+    private static final String API_KEY_CONFIG_ENV_VAR_NAME =
+            "MERLOC_APIKEY";
     private static final String BROKER_CONNECTION_NAME_CONFIG_ENV_VAR_NAME =
             "MERLOC_BROKER_CONNECTION_NAME";
 
@@ -43,6 +46,9 @@ public class MerLocRunProfileState extends ApplicationConfiguration.JavaApplicat
         applicationConfiguration.setEnvs(new HashMap<>() {{
             put(BROKER_URL_CONFIG_ENV_VAR_NAME, runtimeConfig.brokerURL());
             put(BROKER_CONNECTION_NAME_CONFIG_ENV_VAR_NAME, runtimeConfig.connectionName());
+            if (!StringUtils.isEmpty(runtimeConfig.apiKey())) {
+                put(API_KEY_CONFIG_ENV_VAR_NAME, runtimeConfig.apiKey());
+            }
         }});
         return applicationConfiguration;
     }

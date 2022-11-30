@@ -51,6 +51,7 @@ public class MerLocConfigurationFactory extends ConfigurationFactory {
         Map<String, Object> config = new HashMap<>();
         config.put("brokerURL", runConfiguration.getBrokerURL());
         config.put("connectionName", runConfiguration.getConnectionName());
+        config.put("apiKey", runConfiguration.getApiKey());
         config.put("runtimeVersion", runConfiguration.getRuntimeVersion());
         ConfigManager.writeConfigToFile(config, profileName, oldProfileName);
     }

@@ -7,11 +7,14 @@ public final class RuntimeConfig {
 
     private final String brokerURL;
     private final String connectionName;
+    private final String apiKey;
     private final String runtimeVersion;
 
-    private RuntimeConfig(String brokerURL, String connectionName, String runtimeVersion) {
+    private RuntimeConfig(String brokerURL, String connectionName,
+                          String apiKey, String runtimeVersion) {
         this.brokerURL = brokerURL;
         this.connectionName = connectionName;
+        this.apiKey = apiKey;
         this.runtimeVersion = runtimeVersion;
     }
 
@@ -21,6 +24,10 @@ public final class RuntimeConfig {
 
     public String connectionName() {
         return connectionName;
+    }
+
+    public String apiKey() {
+        return apiKey;
     }
 
     public String runtimeVersion() {
@@ -35,6 +42,7 @@ public final class RuntimeConfig {
 
         private String brokerURL;
         private String connectionName;
+        private String apiKey;
         private String runtimeVersion;
 
         private Builder() {
@@ -50,13 +58,18 @@ public final class RuntimeConfig {
             return this;
         }
 
+        public Builder apiKey(String apiKey) {
+            this.apiKey = apiKey;
+            return this;
+        }
+
         public Builder runtimeVersion(String runtimeVersion) {
             this.runtimeVersion = runtimeVersion;
             return this;
         }
 
         public RuntimeConfig build() {
-            return new RuntimeConfig(brokerURL, connectionName, runtimeVersion);
+            return new RuntimeConfig(brokerURL, connectionName, apiKey, runtimeVersion);
         }
 
     }

@@ -28,6 +28,7 @@ public class MerLocRunConfiguration
     private final RuntimeManager runtimeManager;
     private String brokerURL;
     private String connectionName = "default";
+    private String apiKey;
     private String runtimeVersion = RuntimeManager.RUNTIME_DEFAULT_VERSION;
 
     public MerLocRunConfiguration(RuntimeManager runtimeManager,
@@ -45,6 +46,10 @@ public class MerLocRunConfiguration
         return connectionName;
     }
 
+    public String getApiKey() {
+        return apiKey;
+    }
+
     public String getRuntimeVersion() {
         return runtimeVersion;
     }
@@ -54,6 +59,7 @@ public class MerLocRunConfiguration
         if (null != config) {
             brokerURL = (String) config.get("brokerURL");
             connectionName = (String) config.getOrDefault("connectionName", "default");
+            apiKey = (String) config.get("apiKey");
             runtimeVersion = (String) config.getOrDefault("runtimeVersion", RuntimeManager.RUNTIME_DEFAULT_VERSION);
         }
     }
@@ -63,6 +69,7 @@ public class MerLocRunConfiguration
         super.writeExternal(element);
         JDOMExternalizerUtil.writeField(element, "brokerURL", brokerURL);
         JDOMExternalizerUtil.writeField(element, "connectionName", connectionName);
+        JDOMExternalizerUtil.writeField(element, "apiKey", apiKey);
         JDOMExternalizerUtil.writeField(element, "runtimeVersion", runtimeVersion);
         readConfigurations(getName());
     }
@@ -72,6 +79,7 @@ public class MerLocRunConfiguration
         super.readExternal(element);
         brokerURL = JDOMExternalizerUtil.readField(element, "brokerURL");
         connectionName = JDOMExternalizerUtil.readField(element, "connectionName");
+        apiKey = JDOMExternalizerUtil.readField(element, "apiKey");
         runtimeVersion = JDOMExternalizerUtil.readField(element, "runtimeVersion");
         readConfigurations(getName());
     }
@@ -85,6 +93,9 @@ public class MerLocRunConfiguration
     void apply(RuntimeConfig runtimeConfig) {
         this.brokerURL = runtimeConfig.brokerURL();
         this.connectionName = runtimeConfig.connectionName();
+        if (runtimeConfig.apiKey() != null) {
+            this.apiKey = runtimeConfig.apiKey();
+        }
         if (runtimeConfig.runtimeVersion() != null) {
             this.runtimeVersion = runtimeConfig.runtimeVersion();
         }
@@ -95,6 +106,7 @@ public class MerLocRunConfiguration
                 builder().
                 brokerURL(brokerURL).
                 connectionName(connectionName).
+                apiKey(apiKey).
                 runtimeVersion(runtimeVersion).
                 build();
     }

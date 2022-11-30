@@ -32,6 +32,7 @@ public class MerLocSettingsEditor extends SettingsEditor<MerLocRunConfiguration>
     private final JTextArea argsArea = new JTextArea();
     private final JTextField brokerURL = new JTextField();
     private final JTextField connectionName = new JTextField();
+    private final JTextField apiKey = new JTextField();
     private final ConfigurationModuleSelector moduleSelector;
     private final List<String> configItems = new ArrayList<>();
 
@@ -82,16 +83,19 @@ public class MerLocSettingsEditor extends SettingsEditor<MerLocRunConfiguration>
     protected void resetEditorFrom(@NotNull MerLocRunConfiguration rc) {
         brokerURL.setText(rc.getBrokerURL());
         connectionName.setText(rc.getConnectionName());
+        apiKey.setText(rc.getApiKey());
         moduleSelector.reset(rc);
     }
 
     private RuntimeConfig createRuntimeConfig() {
         String brokerURLValue = brokerURL.getText().trim();
         String connectionNameValue = connectionName.getText().trim();
+        String apiKeyValue = apiKey.getText().trim();
         return RuntimeConfig.
                 builder().
                 brokerURL(brokerURLValue).
                 connectionName(connectionNameValue).
+                apiKey(apiKeyValue).
                 build();
     }
 
@@ -131,6 +135,7 @@ public class MerLocSettingsEditor extends SettingsEditor<MerLocRunConfiguration>
 
         JLabel brokerURLLabel = new JLabel("Broker URL:");
         JLabel connectionNameLabel = new JLabel("Connection Name:");
+        JLabel apiKeyLabel = new JLabel("API Key:");
 
         gc.gridy++;
         gc.gridx = 0;
@@ -153,6 +158,17 @@ public class MerLocSettingsEditor extends SettingsEditor<MerLocRunConfiguration>
         gc.gridwidth = 3;
         gc.fill = GridBagConstraints.HORIZONTAL;
         panel.add(connectionName, gc);
+
+        gc.gridy++;
+        gc.gridx = 0;
+        gc.gridwidth = 1;
+        gc.fill = GridBagConstraints.NONE;
+        panel.add(apiKeyLabel, gc);
+
+        gc.gridx++;
+        gc.gridwidth = 3;
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        panel.add(apiKey, gc);
 
         return panel;
     }
