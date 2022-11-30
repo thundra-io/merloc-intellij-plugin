@@ -41,7 +41,7 @@ repositories {
 dependencies {
     implementation("org.apache.commons:commons-lang3:3.12.0")
     compileOnly("io.thundra.merloc:merloc-aws-lambda-runtime-embedded:0.0.11")
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.21.0")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0")
 }
 
 // Configure gradle-intellij-plugin plugin.
