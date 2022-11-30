@@ -4,6 +4,19 @@
 
 ## [Unreleased]
 ### Added
+
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [0.0.6] - 2022-11-30
+### Added
 - Add optional API key config while connecting to broker
 
 ### Changed
@@ -18,18 +31,8 @@
 ### Security
 
 ## [0.0.5] - 2022-09-27
-### Added
-
-### Changed
-
-### Deprecated
-
-### Removed
-
 ### Fixed
 - Upgrade to MerLoc Java runtime `0.0.10` to fix update of missing `AWS_SECRET_ACCESS_KEY` environment variable at each invocation
-
-### Security
 
 ## [0.0.4] - 2022-09-26
 ### Fixed
