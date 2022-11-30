@@ -4,8 +4,10 @@
 
 ## [Unreleased]
 ### Added
+- Add optional API key config while connecting to broker
 
 ### Changed
+- Upgrade to MerLoc Java runtime `0.0.11`
 
 ### Deprecated
 
