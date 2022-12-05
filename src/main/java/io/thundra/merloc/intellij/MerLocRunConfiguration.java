@@ -25,9 +25,12 @@ import java.util.Map;
 public class MerLocRunConfiguration
         extends ModuleBasedConfiguration<JavaRunConfigurationModule, MerLocRunConfiguration> {
 
+    public static final String DEFAULT_BROKER_URL = "wss://merloc-broker.thundra.io";
+    public static final String DEFAULT_CONNECTION_NAME = "default";
+
     private final RuntimeManager runtimeManager;
-    private String brokerURL;
-    private String connectionName = "default";
+    private String brokerURL = DEFAULT_BROKER_URL;
+    private String connectionName = DEFAULT_CONNECTION_NAME;
     private String apiKey;
     private String runtimeVersion = RuntimeManager.RUNTIME_DEFAULT_VERSION;
 
@@ -57,8 +60,8 @@ public class MerLocRunConfiguration
     private void readConfigurations(String profile) throws InvalidDataException {
         Map<String, Object> config = ConfigManager.loadConfigFromFile(profile);
         if (null != config) {
-            brokerURL = (String) config.get("brokerURL");
-            connectionName = (String) config.getOrDefault("connectionName", "default");
+            brokerURL = (String) config.getOrDefault("brokerURL", DEFAULT_BROKER_URL);
+            connectionName = (String) config.getOrDefault("connectionName", DEFAULT_CONNECTION_NAME);
             apiKey = (String) config.get("apiKey");
             runtimeVersion = (String) config.getOrDefault("runtimeVersion", RuntimeManager.RUNTIME_DEFAULT_VERSION);
         }
@@ -130,6 +133,9 @@ public class MerLocRunConfiguration
         }
         if (StringUtils.isEmpty(runtimeVersion)) {
             throw new RuntimeConfigurationException("Runtime version must be specified");
+        }
+        if (brokerURL.equals(DEFAULT_BROKER_URL) && StringUtils.isEmpty(apiKey)) {
+            throw new RuntimeConfigurationException("API key must be specified when Thundra hosted broker is used");
         }
     }
 
