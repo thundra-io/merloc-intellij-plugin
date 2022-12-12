@@ -6,6 +6,19 @@
 ### Added
 
 ### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [0.0.7] - 2022-12-12
+### Added
+
+### Changed
 - Upgrade to MerLoc Java runtime `0.0.12`
 
 ### Deprecated
@@ -22,14 +35,6 @@
 
 ### Changed
 - Upgrade to MerLoc Java runtime `0.0.11`
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [0.0.5] - 2022-09-27
 ### Fixed
