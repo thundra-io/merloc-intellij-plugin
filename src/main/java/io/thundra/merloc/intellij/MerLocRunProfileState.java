@@ -26,6 +26,8 @@ public class MerLocRunProfileState extends ApplicationConfiguration.JavaApplicat
             "MERLOC_APIKEY";
     private static final String BROKER_CONNECTION_NAME_CONFIG_ENV_VAR_NAME =
             "MERLOC_BROKER_CONNECTION_NAME";
+    private static final String LAMBDA_RUNTIME_VM_ARGS =
+            "-Dfile.encoding=UTF-8";
 
     private final RuntimeConfig runtimeConfig;
     private final RuntimeManager runtimeManager;
@@ -43,6 +45,7 @@ public class MerLocRunProfileState extends ApplicationConfiguration.JavaApplicat
                 new ApplicationConfiguration("merloc", project);
         applicationConfiguration.setMainClassName(LAMBDA_RUNTIME_MAIN_CLASS_NAME);
         applicationConfiguration.setModule(module);
+        applicationConfiguration.setVMParameters(LAMBDA_RUNTIME_VM_ARGS);
         applicationConfiguration.setEnvs(new HashMap<>() {{
             put(BROKER_URL_CONFIG_ENV_VAR_NAME, runtimeConfig.brokerURL());
             put(BROKER_CONNECTION_NAME_CONFIG_ENV_VAR_NAME, runtimeConfig.connectionName());
