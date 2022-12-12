@@ -6,6 +6,7 @@
 ### Added
 
 ### Changed
+- Upgrade to MerLoc Java runtime `0.0.12`
 
 ### Deprecated
 
