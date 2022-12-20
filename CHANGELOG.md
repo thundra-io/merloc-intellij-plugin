@@ -12,6 +12,7 @@
 ### Removed
 
 ### Fixed
+- Upgrade to MerLoc Java runtime `0.0.13` to fix invalid connection name issue
 
 ### Security
 
