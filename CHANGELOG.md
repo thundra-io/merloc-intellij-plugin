@@ -12,23 +12,26 @@
 ### Removed
 
 ### Fixed
-- Upgrade to MerLoc Java runtime `0.0.13` to fix invalid connection name issue
 
 ### Security
 
-## [0.0.7] - 2022-12-12
+## [0.0.8] - 2022-12-20
 ### Added
 
 ### Changed
-- Upgrade to MerLoc Java runtime `0.0.12`
 
 ### Deprecated
 
 ### Removed
 
 ### Fixed
+- Upgrade to MerLoc Java runtime `0.0.13` to fix invalid connection name issue
 
 ### Security
+
+## [0.0.7] - 2022-12-12
+### Changed
+- Upgrade to MerLoc Java runtime `0.0.12`
 
 ## [0.0.6] - 2022-11-30
 ### Added
